@@ -126,7 +126,7 @@ def go(args):
         description=f"Random forest model",
         metadata=rf_config
     )
-    artifact.add_dir("random_forest_dir")
+    artifact.add_dir("random_forest_dir", name="random_forest_dir")
     run.log_artifact(artifact)
     # artifact.wait()
     ######################################
