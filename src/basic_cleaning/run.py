@@ -30,7 +30,7 @@ def go(args):
     logger.info("Dropping outliers")
     idx = df['price'].between(args.min_price, args.max_price)
     df = df[idx].copy()
-    
+
     # Convert last_review to datetime
     logger.info("Converting data")
     df['last_review'] = pd.to_datetime(df['last_review'])
@@ -45,7 +45,6 @@ def go(args):
         description=args.output_description,
     )
     artifact.add_file(filename)
-    run.log_artifact(artifact)
 
     logger.info("Logging artifact")
     run.log_artifact(artifact)
