@@ -35,6 +35,10 @@ def go(args):
     logger.info("Converting data")
     df['last_review'] = pd.to_datetime(df['last_review'])
 
+    # Drop rows in the dataset that are not in the proper geolocation
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
+
     # Write output to W&B
     filename = "clean_sample.csv"
     df.to_csv(filename, index=False)
