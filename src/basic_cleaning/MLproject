@@ -6,28 +6,28 @@ entry_points:
     parameters:
 
       input_artifact:
-        description: ## ADD DESCRIPTION
+        description: Fully-qualified name for the input artifact
         type: string
 
       output_artifact:
-        description: ## ADD DESCRIPTION
+        description: Name for the output artifact
         type: string
 
       output_type:
-        description: ## ADD DESCRIPTION
+        description: Type for the output artifact
         type: string
 
       output_description:
-        description: ## ADD DESCRIPTION
+        description: Decription for the output artifact
         type: string
 
       min_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: Minimum per-night rental price. Data with lower price will be discarded
+        type: float
 
       max_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: Maximum per-night rental price. Data with higher price will be discarded
+        type: float
 
 
     command: >-
